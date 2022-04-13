@@ -18,11 +18,29 @@
 	{{{someHTML}}}
 
 	<ul>
+		{{!-- here we iterate over the todoList array --}}
 		{{#each todoList}}
 			<li>{{this}}</li>
 		{{/each}}
 	</ul>
 
+	{{!-- this displays the fields of the movie --}}
+	<h2>
+		Title: {{movie.title}}
+	</h2>
+	<h2>
+		Director: {{movie.director}}
+	</h2>
+	{{!-- if you access properties of an object you can set a --}}
+	{{!-- context instead of <nameOfTheObject.key> --}}
+	{{#with movie}}
+		<h2>
+			Title: {{title}}
+		</h2>
+		<h2>
+			Director: {{director}}
+		</h2>
+	{{/with}}
 
 </body>
 </html>
